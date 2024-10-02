@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patinhas do Amor</title>
+    <style>
+        /* Definindo as cores principais do site */
+        body {
+            background-color: #00FFFF; /* Fundo cor água */
+            color: #800020; /* Letras cor de vinho */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #F8F8FF; /* Fundo do cabeçalho cor gelo */
+        }
+
+        header img {
+            max-width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #800020; /* Links com a cor de vinho */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        button {
+            background-color: #F8F8FF; /* Botões cor de gelo */
+            color: black; /* Letras pretas nos botões */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background-color: #F8F8FF; /* Fundo do rodapé cor gelo */
+            padding: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: #800020; /* Links no rodapé com cor de vinho */
+            text-decoration: none;
+        }
+
+        /* Adicionando animação de fade-in */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+
+        /* Estado final da animação */
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .animal-grid a img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .animal-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho com logo e navegação -->
+    <header>
+        <img src="image/logo.png" alt="Logo da ONG">
+        <nav>
+            <ul>
+                <li><a href="#home">Página Inicial</a></li>
+                <li><a href="#adocao">Adoção</a></li>
+                <li><a href="#doar">Doações</a></li>
+                <li><a href="#voluntarios">Voluntários</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção principal da página inicial -->
+    <main id="home">
+        <h1>Bem vindo á Patinhas do Amor</h1>
+        <p>Aqui, você pode ajudar cães e gatos a encontrar um lar</p>
+        <div class="animal-grid">
+            <!-- Grid com imagens dos animais para adoção -->
+            <a href="#"><img src="image/animal1.jpg" alt="Animal 1"></a>
+            <a href="#"><img src="image/animal2.jpeg" alt="Animal 2"></a>
+            <a href="#"><img src="image/animal3.jpg" alt="Animal 3"></a>
+            <a href="#"><img src="image/animal4.webp" alt="Animal 4"></a>
+        </div>
+        <button onclick="fadeOut('adocao')">Adotar um Animal</button>
+        <button onclick="fadeOut('doar')">Doe Agora</button>
+        <button onclick="fadeOut('voluntarios')">Seja Voluntário</button>
+    </main>
+
+    <!-- Seção de adoção -->
+    <section id="adocao" class="fade-in">
+        <h1>Animais para Adoção</h1>
+        <form>
+            <label>Filtros:</label>
+            <!-- Filtros de seleção dos animais -->
+            <input type="checkbox" name="filho" value="filho"> Filhotes
+            <input type="checkbox" name="adulto" value="adulto"> Adultos
+            <input type="checkbox" name="portepequeno" value="portepequeno"> Pequeno
+            <input type="checkbox" name="portemedio" value="portemedio"> Médio
+            <input type="checkbox" name="portegrande" value="portegrande"> Grande
+        </form>
+        <ul>
+            <!-- Lista de animais disponíveis para adoção -->
+            <li><a href="#">Foto do Animal 1</a><button>Adotar</button></li>
+            <li><a href="#">Foto do Animal 2</a><button>Adotar</button></li>
+            <li><a href="#">Foto do Animal 3</a><button>Adotar</button></li>
+            <li><a href="#">Foto do Animal 4</a><button>Adotar</button></li>
+        </ul>
+    </section>
+
+    <!-- Seção de doações -->
+    <section id="doar" class="fade-in">
+        <h1>Doações</h1>
+        <p>As doações nos ajudam a cuidar dos animais e de sua adoção.</p>
+        <form>
+            <label>Formas de Doação:</label>
+            <input type="radio" name="doacao" value="pix"> Pix
+            <input type="radio" name="doacao" value="cartao"> Cartão de Crédito
+            <input type="radio" name="doacao" value="boleto"> Boleto Bancário
+        </form>
+        <div class="doacao-grid">
+            <!-- Campos para escolher o valor da doação -->
+            <label>Valor:</label>
+            <input type="number" name="valor" value="20"> R$ 20
+            <input type="number" name="valor" value="50"> R$ 50
+            <input type="number" name="valor" value="100"> R$ 100
+        </div>
+        <button>Doar Agora</button>
+    </section>
+
+    <!-- Seção de voluntários -->
+    <section id="voluntarios" class="fade-in">
+        <h1>Voluntários</h1>
+        <p>Os voluntários nos ajudam a cuidar dos animais e de sua adoção.</p>
+        <form>
+            <!-- Formulário de inscrição para voluntários -->
+            <label>Informações do Voluntário:</label>
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="phone" name="telefone" placeholder="Telefone">
+            <textarea name="mensagem" placeholder="O que você gostaria de fazer como voluntário?"></textarea>
+        </form>
+        <button>Quero Ser Voluntário</button>
+    </section>
+
+    <!-- Seção de contato -->
+    <section id="contato" class="fade-in">
+        <h1>Contato</h1>
+        <p>Entre em contato conosco para saber mais sobre a adoção, doação ou voluntariado.</p>
+        <form>
+            <!-- Formulário de contato -->
+            <label>Nome:</label>
+            <input type="text" name="nome" placeholder="Nome">
+            <label>E-mail:</label>
+            <input type="email" name="email" placeholder="E-mail">
+            <label>Assunto:</label>
+            <input type="text" name="assunto" placeholder="Assunto">
+            <textarea name="mensagem" placeholder="Mensagem"></textarea>
+        </form>
+    </section>
+
+    <!-- Rodapé com informações de contato -->
+    <footer>
+        <p>Contato:</p>
+        <ul>
+            <li><a href="mailto:info@patinhasdoamor.com.br">info@patinhasdoamor.com.br</a></li>
+            <li><a href="tel:555-555-5555">555-555-5555</a></li>
+            <li><a href="https://www.facebook.com/patinhasdoamor">Facebook</a></li>
+            <li><a href="https://www.instagram.com/patinhasdoamor">Instagram</a></li>
+        </ul>
+        <p>© 2024 Patinhas do Amor. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para fazer fade out na seção e mostrar o conteúdo de outra
+        function fadeOut(sectionId) {
+            // Seleciona a seção que será exibida
+            const section = document.getElementById(sectionId);
+            // Remove a classe visible para começar o fade out
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('visible'));
+            // Adiciona a classe visible para fazer o fade in da seção
+            section.classList.add('visible');
+        }
+
+        // Função para fazer o fade-in inicial das seções
+        window.onload = function () {
+            document.querySelectorAll('section').forEach(sec => sec.classList.add('visible'));
+        };
+    </script>
+</body>
+
+</html>
